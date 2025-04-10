@@ -1,0 +1,23 @@
+%% Sometimes when a section can't be nicely modelled with the \entry[]... mechanism; hack our own
+\makerubrichead{Publications and Presentations}
+
+%% Assuming you've already given \addbibresource{own-bib.bib} in the main doc. Right? Right???
+\nocite{*}
+
+%% If you just want everything in one list
+% \printbibliography[heading={none}]
+
+\printbibliography[heading={subbibliography},title={Journal Articles},type=article, notkeyword=preprint]
+
+
+%\printbibliography[heading={subbibliography},title={Preprints},type=article, keyword=preprint]
+
+%\printbibliography[heading={subbibliography},title={Letters to the Editor},type=article, keyword=letter]
+
+%\printbibliography[heading={subbibliography},title={Conference Proceedings},keyword=inproceedings]
+
+\printbibliography[heading={subbibliography},title={Invited Talks},keyword=invited, resetnumbers=true]
+
+\printbibliography[heading={subbibliography},title={Presentation Awards},type=misc, notkeyword=invited, resetnumbers=true]
+
+% \printbibliography[heading=subbibliography]

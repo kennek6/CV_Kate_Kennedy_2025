@@ -1,0 +1,95 @@
+%
+\documentclass[letterpaper,skipsamekey,11pt,british]{curve}
+
+
+\usepackage{settings}
+
+% Change the fonts if you want
+\ifxetexorluatex % If you're using XeLaTeX or LuaLaTeX
+  \usepackage{fontspec}
+  %% Warning: EB Garamond contains no bold!! Substituting for Junicode Bold, but *may not look nice nor consistent*!!
+\setmainfont[Ligatures=TeX,SmallCapsFeatures={Letters=SmallCaps,LetterSpace=5}]{EB Garamond}
+  %% Charis SIL's rather nice, actually.
+ % \setmainfont[Ligatures=TeX,SmallCapsFeatures={Letters=SmallCaps,LetterSpace=5}]{Charis SIL}
+  \setsansfont[Ligatures=TeX]{Fira Sans}
+  \setmonofont{Inconsolata}
+\else % If you're using pdfLaTeX or latex
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[tracking=smallcaps]{microtype}
+  \usepackage{fbb}
+  \usepackage[type1]{cabin}
+  \usepackage[varqu,varl]{zi4}
+  \useosf  %% Comment out if you prefer lining figures rather than old style figures
+\fi
+\usepackage{csquotes}
+\usepackage{orcidlink}
+
+\usepackage{academicons}
+
+%% Only needed if you want a Publication List
+\addbibresource{own-bib.bib}
+\plauthorname[Katherine M]{Kennedy}
+
+
+%% Specify your last name and first name (as given in the .bib) to automatically bold your own name in the publications list. One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly for now...
+\myname{Kennedy}{Katherine\bibnamedelima M}
+% \myname{d'Andrimont}{Raphaël}
+
+% Change the page margins if you want
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+% Change the colours if you want
+% \definecolor{SwishLineColour}{HTML}{00FFFF}
+% \definecolor{MarkerColour}{HTML}{0000CC}
+
+% Change the item prefix marker if you want
+% \prefixmarker{$\diamond$}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\leftheader{%
+  {\Huge\bfseries\sffamily Katherine M. Kennedy}
+
+  \makefield{\faEnvelopeO}{\href{mailto:kennek6@mcmaster.ca}{kennek6@mcmaster.ca}}
+  %\makefield{\faTwitter}{\texttt{@KateKennedy}}
+  \makefield{\aiGoogleScholar}{\href{https://scholar.google.ca/citations?user=Ijy-fEoAAAAJ&hl=en&oi=ao}{Katherine M. Kennedy}}
+  \makefield{\orcidlink{https://orcid.org/my-orcid?orcid=0000-0003-1240-9703}} {\href{https://orcid.org/my-orcid?orcid=0000-0003-1240-9703}{0000-0003-1240-9703}}
+ % \makefield{\aiOrcid}{\href{https://orcid.org/my-orcid?orcid=0000-0003-1240-9703}{0000-0003-1240-9703}}
+  
+ %\makefield{\social[orcid]{0000-0003-1240-9703}}
+
+}
+\rightheader{}
+
+
+\title{Curriculum Vitae}
+
+\begin{document}
+
+
+\makeheaders[c]
+
+
+\makerubric{education}
+
+\makerubric{employment}
+
+\makerubric{awards}
+
+% If you're not a researcher nor an academic, you probably don't have any publications; delete this line.
+%% Sometimes when a section can't be nicely modelled with the \entry[]... mechanism; hack our own and use \input NOT \makerubric
+
+\input{publications}
+
+\makerubric{academic}
+
+\makerubric{teaching}
+
+\makerubric{mentorship}
+
+\makerubric{community}
+
+\end{document}
